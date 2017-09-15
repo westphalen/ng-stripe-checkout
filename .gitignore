@@ -1,0 +1,17 @@
+# Angular #
+*.ngfactory.ts
+*.ngsummary.json
+
+# Node Files #
+/node_modules
+
+# Typing #
+
+# Dist #
+/dist
+
+# IDE #
+.idea/
+
+*.js.map
+*.d.ts
