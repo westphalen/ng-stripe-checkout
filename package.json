@@ -1,11 +1,11 @@
 {
   "name": "ng-stripe-checkout",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Implements Stripe Checkout as an Angular module.",
   "main": "./dist/ng-stripe-checkout.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "ngc",
+    "transpile": "./node_modules/.bin/ngc",
     "package": "rollup -c",
     "minify": "uglifyjs dist/bundles/ng-stripe-checkout.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng-stripe-checkout.umd.min.js",
     "build": "npm run transpile && npm run package && npm run minify && npm run copyfiles",
