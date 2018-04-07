@@ -18,12 +18,12 @@ export interface IStripeCheckoutOptions {
   description?: string;
   amount?: number;
   locale?: string;
-  zipCode?: string;
-  billingAddress?: string;
+  zipCode?: boolean;
+  billingAddress?: boolean;
   // Optional options.
   currency?: string;
   panelLabel?: string;
-  shippingAddress?: string;
+  shippingAddress?: boolean;
   email?: string;
   label?: string;
   allowRememberMe?: boolean;
