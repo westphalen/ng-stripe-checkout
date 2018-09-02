@@ -122,3 +122,25 @@ export class App {
 }
 ```
 
+### New in 1.0.4
+
+The open method now returns a promise, while still being fully backwards compatible.
+Using the promise handlers lets you simplify your code, as you don't have to configure separate callback functions to receive the token.
+
+Example:
+
+```ts
+this.stripeCheckoutHandler.open({
+    amount: 1500,
+    currency: 'EUR',
+}).then((token) => {
+    // Do something with the token...
+    console.log('Payment successful!', token);
+}).catch((err) => {
+    // Payment failed or was canceled by user...
+    if (err !== 'stripe_closed') {
+        throw err;
+    }
+});
+```
+

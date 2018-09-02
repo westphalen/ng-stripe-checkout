@@ -3,13 +3,9 @@ export interface IStripeCheckoutToken {
   email: string;
 }
 
-export interface IStripeCheckoutCallback {
-  (token: IStripeCheckoutToken, args?: any): void;
-}
+export type StripeCheckoutCompleteFn = (token: IStripeCheckoutToken, args?: any) => void;
 
-export interface IStripeCheckoutOpenCloseCallback {
-  (): void;
-}
+export type StripeCheckoutOpenCloseFn = () => void;
 
 export interface IStripeCheckoutOptions {
   // Highly recommended options.
@@ -28,12 +24,12 @@ export interface IStripeCheckoutOptions {
   label?: string;
   allowRememberMe?: boolean;
   bitcoin?: boolean;
-  opened?: IStripeCheckoutOpenCloseCallback;
-  closed?: IStripeCheckoutOpenCloseCallback;
+  opened?: StripeCheckoutOpenCloseFn;
+  closed?: StripeCheckoutOpenCloseFn;
 }
 
 export interface IStripeCheckoutConfig extends IStripeCheckoutOptions {
   // Required options.
   key: string;
-  token: IStripeCheckoutCallback;
+  token?: StripeCheckoutCompleteFn;
 }
