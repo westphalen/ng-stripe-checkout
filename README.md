@@ -2,8 +2,6 @@
 
 Angular 2+ component for Stripe's Checkout feature.
 
-[![Build Status](https://travis-ci.org/westphalen/ng-stripe-checkout.svg?branch=master)](https://travis-ci.org/westphalen/ng-stripe-checkout)
-
 ## Installation
 
 You can install the package with the following command:
